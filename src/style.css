@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.my-background {
+    background-image: url("../src/img/mitchell-kmetz-KIFEQ82Rxgc-unsplash.jpg");
+    max-height: 200px;
+    max-height: 200px;
+}
