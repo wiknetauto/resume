@@ -17,9 +17,8 @@
             </p>
         </div>
     </div>
-    <Experience header1="Experience" header2="Education">
+    <Experience title="Experience">
         <!-- This template represent a single work-role -->
-        <template v-slot:employment>
             <div v-for="(job, index) in jobs" :key="index">
                 <!-- This role-header-flexbox is a flex container that holds the role header data: img, title, location -->
                 <div class="flex">
@@ -45,21 +44,20 @@
                 </div>
                 <hr class="mt-10 mb-10" v-if="index < jobs.length - 1">
             </div>
-        </template>
-        <template v-slot:education>
-            <div v-for="(school, index) in schools" :key="index">
-                    <!-- This is div is a flex container that holds the school header data: img, school, degree -->
-                    <div class="flex">
-                        <img class="w-14 h-14 my-2" :src="school.img" :alt="school.alt">
-                        <div class="ml-4">
-                            <p class="text-xl font-bold" > {{school.institution}} </p>
-                            <p> {{school.degree}} </p>
-                            <p> {{school.years}} </p>
-                        </div>
-                    </div>
-                    <hr class="mt-10 mb-10" v-if="index < schools.length - 1">
+    </Experience>
+    <Experience title="Education">
+        <div v-for="(school, index) in schools" :key="index">
+            <!-- This is div is a flex container that holds the school header data: img, school, degree -->
+            <div class="flex">
+                <img class="w-14 h-14 my-2" :src="school.img" :alt="school.alt">
+                <div class="ml-4">
+                     <p class="text-xl font-bold" > {{school.institution}} </p>
+                    <p> {{school.degree}} </p>
+                    <p> {{school.years}} </p>
                 </div>
-        </template>
+            </div>
+            <hr class="mt-10 mb-10" v-if="index < schools.length - 1">
+        </div>
     </Experience>
 </template>
 
@@ -237,8 +235,19 @@ export default {
                     years: "2015 - 2016",
                 },
             ],
+            showExperience: true,
+            showEducation: true,
         };
+    },
+    methods: {
+        toggleExperience() {
+            this.showExperience = !this.showExperience;
+        },
+        toggleEducation() {
+            this.showEducation = !this.showEducation;
+        }
     }
+
 }
 </script>
 
