@@ -18,7 +18,8 @@
         </div>
     </div>
     <Experience title="Experience">
-        <!-- This template represent a single work-role -->
+        <div v-if="showExperience">
+            <!-- This template represent a single work-role -->
             <div v-for="(job, index) in jobs" :key="index">
                 <!-- This role-header-flexbox is a flex container that holds the role header data: img, title, location -->
                 <div class="flex">
@@ -44,6 +45,7 @@
                 </div>
                 <hr class="mt-10 mb-10" v-if="index < jobs.length - 1">
             </div>
+        </div>
     </Experience>
     <Experience title="Education">
         <div v-for="(school, index) in schools" :key="index">
