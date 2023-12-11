@@ -37,13 +37,13 @@
                             <li class="list-disc ml-6" v-for="detail in job.details">{{detail}}</li>
                         </ul>
                     </div>
-                    <div>
+                    <div class="mt-8">
                         <div><b>Skills: </b>
                             <span class="bg-gray-300 text-gray-800 text-sm py-1 px-2 rounded inline-flex items-center ml-2 mb-1" v-for="skill in job.skills"> {{skill}} </span>
                         </div>
                     </div>
                 </div>
-                <hr class="mt-10 mb-10" v-if="index < jobs.length - 1">
+                <hr class="mt-8 mb-10" v-if="index < jobs.length - 1">
             </div>
         </div>
     </Experience>
