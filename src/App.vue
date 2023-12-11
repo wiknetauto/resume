@@ -18,9 +18,8 @@
         </div>
     </div>
     <Experience title="Experience">
-        <div v-if="showExperience">
-            <!-- This template represent a single work-role -->
-            <div v-for="(job, index) in jobs" :key="index">
+        <!-- This template represent a single work-role -->
+        <div v-for="(job, index) in jobs" :key="index">
                 <!-- This role-header-flexbox is a flex container that holds the role header data: img, title, location -->
                 <div class="flex">
                     <img class="w-14 h-14 my-2" :src="job.img" :alt="job.alt">
@@ -44,7 +43,6 @@
                     </div>
                 </div>
                 <hr class="mt-8 mb-10" v-if="index < jobs.length - 1">
-            </div>
         </div>
     </Experience>
     <Experience title="Education">
@@ -237,13 +235,11 @@ export default {
                     years: "2015 - 2016",
                 },
             ],
-            showExperience: true,
-            showEducation: true,
         };
     },
     methods: {
-        toggleExperience() {
-            this.showExperience = !this.showExperience;
+        toggleEmployment() {
+            this.showEmployment = !this.showEmployment;
         },
         toggleEducation() {
             this.showEducation = !this.showEducation;
