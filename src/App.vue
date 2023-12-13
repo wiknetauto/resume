@@ -10,6 +10,7 @@
             </div>
         </div>
     </div>
+    <!-- About Section -->
     <div class="mx-6 sm:mx-16 lg:mx-32 xl:mx-48" >
         <h2 class="text-3xl font-bold mt-20">About</h2>
         <div class="my-4 border-2 rounded-lg p-5">
@@ -18,7 +19,7 @@
         </div>
     </div>
     <Experience title="Experience">
-        <!-- This template represent a single work-role -->
+        <!-- This template represent a single work-role with v-for duplicating the template for each job role -->
         <div v-for="(job, index) in jobs" :key="index">
                 <!-- This role-header-flexbox is a flex container that holds the role header data: img, title, location -->
                 <div class="flex">
@@ -59,13 +60,15 @@
             <hr class="mt-10 mb-10" v-if="index < schools.length - 1">
         </div>
     </Experience>
+    <Contact />
 </template>
 
 <script>
 import Experience from './components/Experience.vue'
+import Contact from './components/Contact.vue'
 export default {
     name: 'App',
-    components: { Experience },
+    components: { Experience, Contact },
     data() {
         return {
             jobs: [
